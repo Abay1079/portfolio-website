@@ -82,10 +82,11 @@ This is a personal repo; if you'd like help or changes, open an issue or edit an
 
 ## License
 
-Choose a license for your project if you want to allow reuse. Currently none is specified.
+No licence yet, all content copyrighted.
 
 ---
 
+<<<<<<< HEAD:readme.md
 _Last updated: 2026-01-07_
 
 **Recent improvements (2026-01-07):**
@@ -93,3 +94,6 @@ _Last updated: 2026-01-07_
 - ✅ Integrated contact form with Formspree for email functionality (requires user setup with their Formspree ID)
 - ✅ Added proper form input names (`name`, `firstname`, `lastname`, `email`, `message`) for form submission
 - ⏳ Next: Consider renaming protected project folder from `Future Flood Prevention and Fund Distribution in Toronto/` to `future-flood-protection-toronto/` to remove spaces and improve file handling
+=======
+_Last updated: 2026-01-06_
+>>>>>>> 3c93773a10c07a8f5187162efeacf2979115e374:README.md
