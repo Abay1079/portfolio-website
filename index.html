@@ -11,24 +11,21 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#" onclick="return viewResume()">Livia Hu</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-            <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#" onclick="return viewResume()">Livia Hu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></li>
+        </ul>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
   <main class="container-fluid p-0">
     <section id="about-me" class="container">
@@ -37,24 +34,14 @@
         <div class="col-12 col-md-6 profile-img-wrap">
           <img src="images/profile.png" alt="Livia Hu profile picture">
         </div>
-
-        <div class="col-12 col-md-6 d-flex align-items-center self-intro">
-          <div class="intro-card">
-            <h1 class="display-5 fw-bold mb-1">Livia Hu</h1>
-            <h2 class="h4 mb-4" style="color: var(--brand-primary);">Designing Accessible Digital Experiences</h2>
-
-            <div class="bio-container mb-4">
-              <p id="bioText">
-                As a University of Toronto student, Livia Hu bridges inclusive design with creative communication to
-                make complex ideas accessible. Her work is driven by a commitment to sustainability, mental health, and
-                child development, and she brings together technical tools—Python, Adobe Creative Suite—and the power of
-                storytelling to create user‑centered digital experiences grounded in research and empathy.</p>
-              <a href="javascript:void(0)" id="readMoreBtn" class="read-more-link">read more</a>
-            </div>
-
-            <div class="d-flex">
-              <a href="portfolio.html" class="btn btn-primary btn-lg me-3 px-4">Explore More</a>
-              <a href="contacts.html" class="btn btn-outline-secondary btn-lg px-4">Connect Me</a>
+        <div class="col-12 col-md-6 d-flex align-items-stretch">
+          <div class="intro-card mx-auto px-4 px-md-5" style="max-width: 520px;">
+            <h1 class="fw-bold mb-3">Livia Hu</h1>
+            <p class="lead text-muted mb-3">Creative and research-driven University of Toronto Mississauga student combining digital media, communication, and inclusive design to build accessible, arts-based deliverables.</p>
+            <p class="mb-4">Experienced in content creation, interdisciplinary collaboration, and knowledge mobilization across sustainability, mental health, and child development topics. Skilled in Python, Adobe Creative Suite, and storytelling for diverse audiences — passionate about bridging research and practice through accessible formats.</p>
+            <div>
+              <a href="portfolio.html" class="btn btn-primary btn-lg me-2">See portfolio</a>
+              <a href="contacts.html" class="btn btn-outline-secondary btn-lg">Contact me</a>
             </div>
           </div>
         </div>
@@ -62,99 +49,59 @@
     </section>
 
     <section id="portfolio" class="container">
-      <div class="d-flex justify-content-between align-items-end mb-4">
-        <div>
-          <h2 style="margin-bottom: 1.5rem;" class="fw-bold">Featured Work</h2>
-          <ul>
-            <li class="text-muted mb-0">Livia is deeply invested in HCI and human‑centered design, ensuring that
-              products
-              and services are intuitive, equitable, and effortless for all users. To her, sustainability is not only an
-              environmental concern but a forward‑looking mindset that shapes personal growth, business development, and
-              societal progress. It is a philosophy that extends beyond climate issues to encompass how individuals,
-              communities, and organizations imagine and build their futures.
-            </li>
-            <li class="text-muted mb-0">Across her projects, Livia blends research, design, and real‑world impact. Her
-              practice reflects a belief that sustainable thinking and inclusive design are for everyone—not just those
-              in
-              environmental fields or public institutions, but anyone who holds expectations for a better future,
-              whether
-              for themselves or for society at large.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <a href="portfolio.html" style="margin-bottom: 0.8em;"
-        class="btn btn-outline-primary d-none d-md-inline-block">View All Projects</a>
-
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
+      <h2 class="mb-4">Portfolio</h2>
+      <p class="text-muted mb-4">Highlights of my work and projects.</p>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 project-grid">
         <div class="col">
-          <div class="card h-100 project-card shadow-sm border-0">
-            <div class="card-img-container">
-              <img src="images/ai in relationship1.jpg" class="card-img-top" alt="AI in Relationships"
-                onerror="this.src='images/profile.png'">
-            </div>
-            <div class="card-body p-4">
-              <h5 class="card-title fw-bold">AI in Relationships</h5>
-              <p class="card-text text-muted">Research & video analyzing emotional realism in AI companions and ethical
-                risks for youth and minority users.</p>
-              <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Project</a>
+          <div class="card project-card h-100">
+            <img src="images/ai in relationship1.jpg" alt="AI in Relationships thumbnail" class="card-img-top" onerror="this.onerror=null;this.src='images/profile.png'">
+            <div class="card-body">
+              <h5 class="card-title">AI in Relationships</h5>
+              <p class="card-text">Research & video analyzing emotional realism in AI companions and ethical risks for youth and minority users.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">View project</a>
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card h-100 project-card shadow-sm border-0">
-            <div class="card-img-container">
-              <img src="images/navi app.png" class="card-img-top" alt="NaviAlert"
-                onerror="this.src='images/profile.png'">
-            </div>
-            <div class="card-body p-4">
-              <h5 class="card-title fw-bold">NaviAlert</h5>
-              <p class="card-text text-muted">Inclusive transit app prototype for Apple Watch designed to support users
-                with cerebral palsy through tactile feedback.</p>
-              <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Project</a>
+          <div class="card project-card h-100">
+            <img src="images/navi app.png" alt="NaviAlert thumbnail" class="card-img-top" onerror="this.onerror=null;this.src='images/profile.png'">
+            <div class="card-body">
+              <h5 class="card-title">NaviAlert</h5>
+              <p class="card-text">Inclusive transit app prototype for Apple Watch designed to support users with cerebral palsy.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">View project</a>
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card h-100 project-card shadow-sm border-0">
-            <div class="card-img-container">
-              <img src="images/self-checkout.png" class="card-img-top" alt="Human-Machine Communication"
-                onerror="this.src='images/profile.png'">
-            </div>
-            <div class="card-body p-4">
-              <h5 class="card-title fw-bold">HMC Proposal</h5>
-              <p class="card-text text-muted">Accessibility evaluation and redesign proposals for retail self-checkout
-                systems to reduce cognitive load for elderly users.</p>
-              <a href="#" class="btn btn-sm btn-outline-primary mt-2">View Project</a>
+          <div class="card project-card h-100">
+            <img src="images/self-checkout.png" alt="Human-Machine Communication thumbnail" class="card-img-top" onerror="this.onerror=null;this.src='images/profile.png'">
+            <div class="card-body">
+              <h5 class="card-title">Human–Machine Communication Proposal</h5>
+              <p class="card-text">Accessibility evaluation and redesign proposals for retail self-checkout systems to reduce cognitive load.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">View project</a>
             </div>
           </div>
         </div>
 
         <div class="col">
-          <div class="card h-100 project-card shadow-sm border-0">
-            <div class="card-img-container">
-              <img src="images/flood.png" class="card-img-top" alt="Toronto Flood Protection"
-                onerror="this.src='images/profile.png'">
-            </div>
-            <div class="card-body p-4">
-              <h5 class="card-title fw-bold">Toronto Flood Fund</h5>
-              <p class="card-text text-muted">Climate data analysis and visual reports recommending equitable
-                infrastructure investments for high-risk neighborhoods.</p>
-              <a href="#" class="btn btn-sm btn-outline-primary mt-2"
-                onclick="return protectedOpen('files/flood-report.html','08152024')">View Secure Project</a>
+          <div class="card project-card h-100">
+            <img src="images/flood.png" alt="Toronto Flood Protection thumbnail" class="card-img-top" onerror="this.onerror=null;this.src='images/profile.png'">
+            <div class="card-body">
+              <h5 class="card-title">Toronto Flood Protection Fund</h5>
+              <p class="card-text">Climate data analysis and visual reports recommending equitable infrastructure investments.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3" onclick="return protectedOpen('files/Future Flood Prevention and Fund Distribution in Toronto/FutureFloodPreventionandFundDistributioninTor.html','08152024')">View project</a>
             </div>
           </div>
         </div>
 
       </div>
     </section>
-
-    <footer class="text-center py-4 bg-light border-top mt-5">
-      <p class="mb-0 text-muted">&copy; 2026 Livia Hu. All rights reserved.</p>
-    </footer>
+  </main>
+  <footer class="text-center py-4 bg-light">
+    <div class="container"><p class="mb-0">&copy; 2025 Livia Hu. All rights reserved.</p></div>
+  </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/site.js"></script>
