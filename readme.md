@@ -67,8 +67,14 @@ Security note: This client-side protection is only an access gate in the browser
 
 ## Development notes
 
-- Navbar brand triggers a `viewResume()` confirm (clicking prompts "View my resume?") and redirects to `resume.html` on confirm. That function is defined inline in the pages.
-- Contact form is static and does not send email by itself — to enable sending, wire the form to a server endpoint or a service like Formspree, Netlify Forms, or similar.
+- **Navbar brand** — The navbar brand "Livia Hu" triggers a `viewResume()` confirm dialog (clicking prompts "View my resume?") and redirects to `resume.html` on confirm. The function is now centralized in `js/site.js` to follow the DRY principle and eliminate code duplication.
+- **Contact form** — Now integrated with Formspree for email functionality. To enable:
+  1. Go to [formspree.io](https://formspree.io) and create a free account
+  2. Create a new form and get your form ID
+  3. In `contact.html`, replace `YOUR_FORM_ID` in the form action with your actual Formspree ID
+  4. The form will now send emails directly to your account
+  
+  Alternatively, you can wire the form to other services like Netlify Forms, SendGrid, or a custom Node.js/Express server endpoint.
 
 ## Contributing
 
@@ -80,4 +86,10 @@ Choose a license for your project if you want to allow reuse. Currently none is 
 
 ---
 
-_Last updated: 2025-12-21_
+_Last updated: 2026-01-07_
+
+**Recent improvements (2026-01-07):**
+- ✅ Centralized `viewResume()` function in `js/site.js` to eliminate code duplication across `index.html`, `contact.html`, `portfolio.html`, and `resume.html`
+- ✅ Integrated contact form with Formspree for email functionality (requires user setup with their Formspree ID)
+- ✅ Added proper form input names (`name`, `firstname`, `lastname`, `email`, `message`) for form submission
+- ⏳ Next: Consider renaming protected project folder from `Future Flood Prevention and Fund Distribution in Toronto/` to `future-flood-protection-toronto/` to remove spaces and improve file handling

@@ -9,3 +9,10 @@ function protectedOpen(path, expectedPassword) {
   }
   return false;
 }
+
+function viewResume() {
+  if (confirm('View my resume?')) {
+    window.location.href = 'resume.html';
+  }
+  return false;
+}
