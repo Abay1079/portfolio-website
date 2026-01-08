@@ -76,8 +76,8 @@ This is a personal repo; if you'd like help or changes, open an issue or edit an
 
 ## License
 
-Choose a license for your project if you want to allow reuse. Currently none is specified.
+No licence yet, all content copyrighted.
 
 ---
 
-_Last updated: 2025-12-21_
+_Last updated: 2026-01-06_
