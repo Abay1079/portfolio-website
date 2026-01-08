@@ -1,86 +1,168 @@
-/* Global reset */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color: #222;
-  background: #fff;
+/* =========================================
+   1. VARIABLES & THEME (Bootstrap Blue)
+   ========================================= */
+:root {
+  /* Official Bootstrap Blue Palette */
+  --brand-primary: #0d6efd;       /* bs-blue */
+  --brand-primary-dark: #0a58ca;  /* bs-primary-darken-10% */
+  
+  /* Bootstrap Grays */
+  --text-main: #212529;           /* bs-body-color */
+  --text-muted: #6c757d;          /* bs-secondary-color */
+  
+  /* Backgrounds & Borders */
+  --bg-white: #ffffff;
+  --bg-light: #f8f9fa;            /* bs-light */
+  --border-subtle: #dee2e6;       /* bs-border-color */
+  
+  /* Bootstrap Defaults */
+  --radius-base: 0.375rem;        /* bs-border-radius (Standard Bootstrap) */
+  --transition-smooth: 0.15s ease-in-out; /* bs-transition */
 }
 
-/* Navbar tweaks */
-.navbar-brand { cursor: pointer; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  line-height: 1.5;
+}
 
-/* Hero / intro styles */
-.intro-card {
-  background: #fff;
-  box-shadow: none;
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 0.25rem;
-  padding: 2.5rem;
-  color: #222;
-  position: relative;
-  z-index: 2;
+section {
+  padding: 5rem 0;
+}
+
+/* =========================================
+   2. MOBILE / SMARTPHONE (Base Styles)
+   ========================================= */
+.row-sync {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100vh;
 }
 
-.img-panel {
-  box-shadow: none;
-  border: 1px solid rgba(0,0,0,0.06);
-  border-radius: 0.25rem;
+.profile-img-wrap {
+  width: 100%;
+  height: 400px;
+  order: -1; 
+}
+
+.profile-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-card {
+  padding: 2.5rem 1.5rem;
+}
+
+#bioText {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-}
-.img-panel img { display:block; width:100%; height:100%; object-fit:cover; }
-
-@media (max-width: 767.98px) {
-  .intro-card { height: auto; margin-left:0; max-width:100%; padding-left:1rem; padding-right:1rem; }
-  .img-panel { box-shadow:none; border:none; border-radius:0; }
-  #profile .col-12.col-md-6.p-0 img { height:auto; }
+  color: var(--text-muted);
 }
 
+#bioText.expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+}
+
+.read-more-link {
+  color: var(--brand-primary);
+  text-decoration: underline;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.read-more-link:hover {
+  color: var(--brand-primary-dark);
+}
+
+/* =========================================
+   3. TABLET & DESKTOP (768px and up)
+   ========================================= */
 @media (min-width: 768px) {
-  .intro-card { max-width: 70%; margin-left: -10rem; padding: 3.5rem; }
+  .row-sync {
+    flex-direction: row;
+    align-items: stretch;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-base);
+    overflow: hidden;
+  }
+
+  .profile-img-wrap,
+  .self-intro {
+    flex: 1 1 50%;
+    height: auto;
+  }
+
+  .intro-card {
+    padding: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile-img-wrap img {
+    height: 100%;
+  }
 }
-@media (min-width: 1200px){ .intro-card { margin-left:-12rem; } }
 
-/* Typography tweaks */
-.intro-card h1 { font-weight:500; font-size:2.25rem; letter-spacing:0.5px; }
-.intro-card p.lead { font-size:1.125rem; line-height:1.6; }
+/* UI Elements - Bootstrap Button Consistency */
+.btn-primary {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+}
 
-/* Section spacing */
-section { margin: 0 0 4rem 0; }
-#profile { margin-bottom: 0; }
+.btn-primary:hover {
+  background-color: var(--brand-primary-dark);
+  border-color: var(--brand-primary-dark);
+}
 
-/* Project cards */
-.project-card img { height: 220px; object-fit: cover; }
-.project-card .card-body { display:flex; flex-direction:column; }
-.project-card .card-text { flex-grow:1; }
+/* =========================================
+   4. PORTFOLIO CARD STYLING
+   ========================================= */
+.card-img-container {
+  height: 220px;
+  overflow: hidden;
+  background-color: var(--bg-light); 
+}
 
-/* Contact form styles */
-#contact-form h1 { 
-  color: #222;
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card {
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  overflow: hidden;
+  border-radius: var(--radius-base);
+  border: 1px solid var(--border-subtle);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  /* Bootstrap-style shadow */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.project-card:hover .card-img-container img {
+  transform: scale(1.03);
+}
+
+.card-title {
+  color: var(--text-main);
   font-weight: 500;
-  font-size: 2.25rem;
-  letter-spacing: 0.5px;
-}
-#contact-form .form-label small { color: #6c757d; }
-.btn-send {
-  background:#11823a; border-color:#11823a; border-radius:28px; padding:18px 48px; font-size:1.05rem; color:#fff;
+  margin-bottom: 0.5rem;
 }
 
-/* Resume styles */
-.resume-header { padding:3rem 0 1rem; text-align:center; }
-.resume-header h1 { margin-bottom:0.25rem; font-weight: 500; }
-.resume-header .contact-line { font-size:0.95rem; color:#555; }
-
-/* Footer styles */
-footer { margin-top: 4rem; }
-
-/* Utilities */
-.container-fluid.px-0 { padding-left:0; padding-right:0; }
-
-/* Make sure main container doesn't add extra spacing by default */
-main.container { padding-top: 0; }
+.card-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
